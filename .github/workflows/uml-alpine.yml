@@ -1,4 +1,4 @@
-name: guest-build-run
+name: linux-guest-job
 
 on:
   workflow_dispatch:
@@ -236,4 +236,4 @@ jobs:
           grep -q 'cmd exit code: 0' uml.log || { echo '::error::custom command finished with a non-zero status'; exit 1; }
           grep -q 'Power down' uml.log || { echo '::error::guest did not power down cleanly'; exit 1; }
           echo "::notice::guest run complete: Alpine $AVER, UML $KVER, veth+NAT, ${MEM}M RAM, ncpus=${NCPU} (img root)"
-# sync-nonce: 20ccfe7ddb6359bf
+# sync-nonce: ff867c38af00c2ba
